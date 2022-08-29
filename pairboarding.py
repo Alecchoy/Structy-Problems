@@ -39,5 +39,25 @@ def closingbrackets(s):
   while j < len(s):
     if s[j] == par[0]:
       if s[j + 1] == par[1]
+
+
+def closingbrackets(s):
+  stack = []
+  parens = {
+    '}' : '{',
+    ']' : '[',
+    ')' : '('
+  }
+  
+  for c in s:
+    if c not in parens:
+      stack.append(c)
+    else:
+      if stack and stack[-1] == parens[c]:
+        stack.pop()
+      else:
+        return False 
+  if not stack:
+    return True
      
   
