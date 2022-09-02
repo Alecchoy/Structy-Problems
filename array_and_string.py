@@ -113,3 +113,27 @@ def pair_product(numbers, target_product):
       return (index, previous_nums[complement])
     
     previous_nums[num] = index
+
+
+    #Write a function, intersection, that takes in two lists, a,b, as arguments. The function should return a new list containing elements that are in both of the two lists.
+
+def intersection(a, b): 
+  item_set = set(a)
+  return [ ele for ele in b if ele in item_set]
+
+
+  #Write a function, five_sort, that takes in a list of numbers as an argument. The function should rearrange elements of the list such that all 5s appear at the end. Your function should perform this operation in-place by mutating the original list. The function should return the list.
+
+def five_sort(nums):
+  i = 0 
+  j = len(nums) - 1
+  while i < j:
+    if nums[j] == 5:
+      j -= 1
+    elif nums[i] == 5: 
+      nums[i], nums[j] = nums[j], nums[i]
+      i += 1
+    else:
+      i += 1
+  return nums
+    
