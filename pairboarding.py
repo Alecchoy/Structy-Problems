@@ -60,4 +60,21 @@ def closingbrackets(s):
   if not stack:
     return True
      
+  def compress(s):
+  i = 0
+  j = 0
+  result = ''
+  
+  while j < len(s) - 1:
+    if s[j] == s[i]:
+      j += 1
+    else:
+      number = j - i
+      if number == 1:
+        result += (s[i])
+      else:
+        result += (str(number))
+        result += (s[i])
+    i = j
+  return result
   
