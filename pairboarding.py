@@ -30,6 +30,9 @@
 # cur = ['{', '}']
 # arr = ['[',']']
 
+from tkinter.tix import FileEntry
+
+
 def closingbrackets(s):
   par = [ '(', ')'] 
   cur = ['{', '}']
@@ -78,3 +81,10 @@ def closingbrackets(s):
     i = j
   return result
   
+
+
+  #Car Fleet 
+
+  var carFleet = function(target, position, speed){
+
+  };
