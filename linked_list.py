@@ -97,6 +97,17 @@ def merge_lists(head_1, head_2):
     
   return dummy.next
 
+def is_univalue_list(head):
+  current = head
+  value = current.val 
+  while current is not None:
+    if current.val != value:
+      return False 
+    current = current.next 
+  
+  return True
+  
+
     
 
     
