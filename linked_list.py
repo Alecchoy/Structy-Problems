@@ -24,3 +24,15 @@ def linked_list_find(head, target):
       return True 
     current = current.next 
   return False 
+
+
+def get_node_value(head, index):
+  idx = 0 
+  current = head
+  while current is not None:
+    if idx == index:
+      return current.val
+    current = current.next
+    idx += 1
+  return None
+    
