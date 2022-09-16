@@ -35,4 +35,16 @@ def get_node_value(head, index):
     current = current.next
     idx += 1
   return None
+
+def reverse_list(head):
+  current = head
+  prev = None
+  
+  while current is not None:
+    next = current.next
+    current.next = prev
+    prev = current
+    current = next
+  return prev
+
     
