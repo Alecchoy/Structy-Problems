@@ -129,6 +129,22 @@ def longest_streak(head):
   return max_streak 
 
 
-    
+def remove_node(head, target_val):
+  current = head 
+  
+  prev = None 
+  if current.val == target_val:
+    return head.next 
+  
+  while current is not None:
+    if current.val == target_val:
+      prev.next = current.next 
+      break
+    prev = current 
+    current = current.next 
+  return head
+      
+
+
 
     
