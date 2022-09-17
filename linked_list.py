@@ -168,6 +168,21 @@ def insert_node(head, value, index):
     count += 1 
     
   return head 
+
+
+class Node:
+  def __init__(self, val):
+    self.val = val
+    self.next = None
+
+def create_linked_list(values):
+  dummy_head = Node(None)
+  tail = dummy_head 
+  for val in values:
+    tail.next = Node(val)
+    tail = tail.next
+  return dummy_head.next 
+
       
 
     
