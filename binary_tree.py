@@ -73,6 +73,22 @@ def tree_sum(root):
       queue.append(node.right)
   
   return sum
+
+
+def tree_includes(root, target):
+  if not root:
+    return False 
+  queue = [root]
+  
+  while queue:
+    node = queue.pop(0)
+    if node.val == target:
+      return True 
+    if node.left:
+      queue.append(node.left)
+    if node.right:
+      queue.append(node.right)
+  return False 
     
   
     
