@@ -31,4 +31,14 @@ def breadth_first_values(root):
   
   
   return answer
+
+
+def depth_first_values(root):
+  if root is None:
+    return []
+  left = depth_first_values(root.left)
+  right = depth_first_values(root.right)
+  
+  return [root.val] + left + right
+  
     
