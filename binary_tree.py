@@ -90,5 +90,17 @@ def tree_includes(root, target):
       queue.append(node.right)
   return False 
     
-  
+def tree_min_value(root):
+  queue = [root]
+  test = float("inf")
+  while queue:
+    node = queue.pop(0)
+    if test > node.val:
+      test = node.val 
+    if node.left:
+      queue.append(node.left)
+    if node.right:
+      queue.append(node.right)
+  return test 
+    
     
