@@ -58,6 +58,21 @@ def breadth_first_values(root):
   
   
   return answer
+
+def tree_sum(root):
+  if not root:
+    return 0 
+  sum = 0 
+  queue = [root]
+  while queue:
+    node = queue.pop(0)
+    sum += node.val
+    if node.left:
+      queue.append(node.left)
+    if node.right:
+      queue.append(node.right)
+  
+  return sum
     
   
     
