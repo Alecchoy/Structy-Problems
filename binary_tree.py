@@ -128,5 +128,29 @@ def path_finder(root, target):
     
   return None
   
+
+from collections import deque
+
+def tree_value_count(root, target):
+  if root is None:
+    return 0
+  
+  count = 0 
+  queue = deque([root])
+  
+  while queue:
+    current = queue.popleft()
+    if current.val == target:
+      count += 1
+
+    if current.left is not None:
+      queue.append(current.left)
+    if current.right is not None:
+      queue.append(current.right)
+
+  return count
+
+  
+  
     
     
