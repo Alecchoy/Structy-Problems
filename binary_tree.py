@@ -176,6 +176,26 @@ def bottom_right_value(root):
       queue.append(current.right)
       
   return current.val
+
+
+def all_tree_paths(root):
+  if root is None:
+    return []
+  
+  if root.left is None and root.right is None:
+    return [[root.val]]
+  
+  paths = [] 
+  
+  left_paths = all_tree_paths(root.left)
+  for left_path in left_paths:
+    paths.append([root.val, *left_path])
+    
+  right_paths = all_tree_paths(root.right)
+  for right_path in right_paths:
+    paths.append([root.val, *right_path])
+    
+  return paths
   
     
     
