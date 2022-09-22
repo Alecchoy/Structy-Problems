@@ -250,6 +250,29 @@ def level_averages(root):
     level_avgs.append((sum(levels[current_level])) / len(levels[current_level]) )
     current_level += 1
   return level_avgs
+
+
+from collections import deque
+
+def leaf_list(root):
+  if not root:
+    return []
+  
+  stack = [root]
+  leafs = []
+  
+  while stack:
+    current = stack.pop()
     
+    if current.left is None and current.right is None:
+      leafs.append(current.val)
+      
+    if current.right is not None:
+      stack.append(current.right)
+        
+    if current.left is not None:
+      stack.append(current.left)
+      
+  return leafs
     
     
