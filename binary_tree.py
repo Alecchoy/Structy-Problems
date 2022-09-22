@@ -221,5 +221,35 @@ def tree_levels(root):
       
   return levels
   
+
+from collections import deque
+
+def level_averages(root):
+  if not root:
+    return []
+  levels = []
+  current_level = 0
+  level_avgs = []
+  queue = deque([(root, 0)])
+
+  while queue:
+    current, level_num = queue.popleft()
+    
+    if len(levels) == level_num:
+      levels.append([current.val])
+    else:
+      levels[level_num].append(current.val)
+      
+    if current.left is not None:
+      queue.append((current.left, level_num + 1))
+      
+    if current.right is not None:
+      queue.append((current.right, level_num + 1))
+      
+  while current_level != len(levels):
+    level_avgs.append((sum(levels[current_level])) / len(levels[current_level]) )
+    current_level += 1
+  return level_avgs
+    
     
     
